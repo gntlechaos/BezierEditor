@@ -30,6 +30,8 @@ boolean isPointSelected;
 
 boolean showControlPoints;
 
+boolean showInfoTab;
+
 boolean bezierToolActive;
 BezierToolStatus bezierCurrentStatus;
 SmartPoint bezierToolCursor;
@@ -51,6 +53,8 @@ void setup(){
   isPointSelected = false;
       
   showControlPoints = true;
+  
+  showInfoTab = false;
   
   bezierToolActive = false;
   bezierToolCursor = new SmartPoint(new PVector(0,0), SmartPointType.CURSOR);
@@ -106,8 +110,12 @@ void draw(){
     
   }
   
-  infoTab.display();
-   if(isPointSelected && selectedPoint != null){
+  if(showInfoTab){
+    infoTab.display();
+  }
+  
+  
+  if(isPointSelected && selectedPoint != null){
     selectedPoint.selectedUpdate(); 
    }
 
@@ -155,6 +163,9 @@ void mouseClicked(){
     }
     if(stackedPoints.size()>0){
       infoTab.updateStudyObject(stackedPoints.get(0));
+      showInfoTab = true; 
+    } else {
+     showInfoTab = false; 
     }
     
   }
@@ -242,7 +253,7 @@ void mouseReleased(){
 
 void keyPressed(){
   
-  if(key == 'y'){
+  if(key == 's'){
      infoTab.studyShape();
   }
   
