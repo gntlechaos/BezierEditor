@@ -1,0 +1,3 @@
+# BezierEditor
+
+Bezier Curve Editor. Let's you place bezier curves and adjust their start, end and control points. If you press 'R', you can hide/show the control points/lines. If you press 'Y', you will toggle the Bezier Add Tool, which allows you to insert new Bezier curves between two points. You can also join endpoints of different curves by holding CONTROL before dropping a point on top of other ones. To explode the joint, simply use the right mouse to click in the region (points will scatter to opposite directions and their link will be broken). Finally, if you use the mouse wheel button, you can select an anchor (end) point to inspect it. While inspecting it, press S to check if it is part of a closed shape. Results will appear on the inspector.
